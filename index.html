@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>アコーディオンUIの作成</title>
+    </head>
+    <body>
+        <div class="accordion" id="js-faq">
+            <p class="accordion-trigger">
+                Q1.アコーディオンメニューのメリットは？
+            </p>
+            <div class="accordion-contents">
+                A1.<br>
+                デザインをすっきりさせて見せることが出来るので、シンプルなデザインにも向いています。<br>
+                また、一度に画面に表示される情報量が減るので、視認性も良くなります。<br>
+                訴求したいコンテンツの見出しだけ表示して、詳細は隠すことにより、ユーザーにとっては情報の取捨選択が可能になります。
+            </div>
+            <p class="accordion-trigger">
+                Q2.アコーディオンメニューのデメリットは？
+            </p>
+            <div class="accordion-contents">
+                A2.<br>
+                クリックなどの操作をしないと詳細を確認できません。<br>
+                また、ユーザーが機能に気付かないおそれもあります。
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="accordion" id="js-accordion">
+            <a href="" class="accordion-trigger">
+                Q1.アコーディオンとはCSSで何ですか？
+            </a>
+            <div class="accordion-contents">
+                A1.<br>
+                コンテンツの折りたたみを行える機能です。<br>
+                見出し領域をクリックすることでコンテンツの開閉が行えます。
+            </div>
+            <a href="" class="accordion-trigger">
+                Q2.アコーディオンブロックとは何ですか？
+            </a>
+            <div class="accordion-contents">
+                A2.<br>
+                アコーディオンブロックとは、タイトルバーをクリック（またはマウスオーバー）すると、コンテンツ部分が開閉するブロックのことです。
+            </div>
+            <a href="" class="accordion-trigger">
+                Q3.トグルとアコーディオンの違いは何ですか？
+            </a>
+            <div class="accordion-contents">
+                A3.<br>「アコーディオン」はサイト上に訪問者が自由に開いたり閉じたりできる文書や画像の配置場所を設置できます。トグルとの違いは、アコーディオンでは同じ場所に複数設定することが可能で、それぞれのコンテンツが伸びたり縮んだりするアコーディオン状に配置されます。
+            </div>
+        </div>
+
+        <br><br>
+
+        <dl class="accordion" id="js-accordion-mini">
+            <dt class="accordion-trigger">
+                Q1.アコーディオン形式とは何ですか？
+            </dt>
+            <dd class="accordion-contents">
+                A1.<br>アコーディオンメニューとは、Webページなどの表示・操作要素の一つで、選択した項目がその場で広がって詳細な内容を表示する形式のメニューのこと。限られた範囲で多数の項目を一覧でき、かつ詳細な内容を即座に参照できるメニュー形式として利便性が高い。
+            </dd>
+        </dl>
+
+        <script src="accordion.js"></script>
+    </body>
+</html>

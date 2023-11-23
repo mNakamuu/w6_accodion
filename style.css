@@ -1,0 +1,31 @@
+/* アコーディオン */
+.accordion {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.accordion-trigger {
+    margin: 0;
+    padding: 10px;
+    display: block;
+    background: #ee8a85;
+    color: #000;
+    border-top: 1px solid #fff;
+}
+
+.accordion-contents {
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: none;
+}
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 8px solid #000;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
