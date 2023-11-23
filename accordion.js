@@ -1,26 +1,25 @@
 (() => {
-
     class Accordion {
-
         // 初期化
         constructor(obj){
-
             const $elm =document.querySelector(obj.hookName);
             const $trigger =$elm.getElementsByTagName(obj.tagName);
 
+            this.triggers = Array.from($trigger);
+            this.contents = this.triggers.map(trigger => trigger.nextElementSibling);
 
-            const triggerLen = $trigger.length;
+            const triggerLen = this.triggers.length;
             let index = 0;
             while (index < triggerLen){
                 // キャレットを追加
-                $trigger[index].innerHTML += '<span class="caret"></span>';
-                $trigger[index].addEventListener('click', (e) => this.clickHandler(e));
+                this.triggers[index].innerHTML += '<span class="caret"></span>';
+                this.triggers[index].addEventListener('click', (e) => this.clickHandler(e, index));
                 index++;
             }
         }
 
         // クリックしたら実行される処理
-        clickHandler(e){
+        clickHandler(e, index){
             e.preventDefault();
 
             const $target = e.currentTarget;
@@ -28,11 +27,18 @@
 
             // キャレットの向きを変更
             const $caret = $target.querySelector('.caret');
-
             if($content.style.display === 'block'){
                 $content.style.display = 'none';
                 $caret.style.transform = 'rotate(0deg)';
             }else {
+                // 他のアコーディオンを閉じる
+                this.contents.forEach((content, i) => {
+                    if (i !== index) {
+                        content.style.display = 'none';
+                        this.triggers[i].querySelector('.caret').style.transform = 'rotate(0deg)';
+                    }
+                });
+
                 $content.style.display = 'block';
                 $caret.style.transform = 'rotate(180deg)';
             }
